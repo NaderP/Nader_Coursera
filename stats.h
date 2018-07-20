@@ -9,32 +9,120 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.h> 
+ * @brief <first week assignment >
  *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * It is a simple code for eight functions that will
+ *           -Sort An array
+ *           -Find minimum number
+ *           -Find maximum number
+ *           -Find median  number
+ *           -Find mean    number
+ *           -Print the array
+ *           -Print the statistics "minimum,maximum,median,mean"
+ *           -Main function to control them
+ * @author <Nader Tosson>
+ * @date <20/7/2018 >
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
-
+void print_array(unsigned char *Data,unsigned int Size);
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief <It is a function to print the array's data>
  *
- * <Add Extended Description Here>
+ * <the function prints the data via pointer and loop>
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <unsigned char *Data> <is A pointer to the array of data>
+ * @param <unsigned int Size> <is the size of the array>
  *
- * @return <Add Return Informaiton here>
+ * @return <Doesn't return anything>
  */
 
+void sort_array(unsigned char *Data,unsigned int Size);
 
+/**
+ * @brief <It is a function to sort the Array>
+ *
+ * <It is consisted of a nested loop were the outer loop
+ * is used to go throw all the array locations while the
+ * inside loop compare the current location with all other
+ * locations to make sure the array is sorted>
+ *
+ * @param <unsigned char *Data> <is A pointer to the array of data>
+ * @param <unsigned int Size> <is the size of the array>
+ *
+ * @return <Doesn't retun anything>
+ */
+
+unsigned char find_median(unsigned char *Data,unsigned int Size); 
+
+/**
+ * @brief <A function to find the median Number>
+ *
+ * <After the function is sorted the program will search
+ *  for the median number location and return it>
+ *
+ * @param <unsigned char *Data> <is A pointer to the array of data>
+ * @param <unsigned int Size> <is the size of the array>
+ *
+ * @return <The median of numbers provided>
+ */
+
+unsigned char find_mean(unsigned char *Data,unsigned int Size); 
+
+/**
+ * @brief <A function to find the mean Value>
+ *
+ * <The function add all the numbers and divide them by their count>
+ *
+ * @param <unsigned char *Data> <is A pointer to the array of data>
+ * @param <unsigned int Size> <is the size of the array>
+ *
+ * @return <Return the mean value of numbers provided>
+ */
+
+unsigned char find_maximum(unsigned char *Data,unsigned int Size); 
+
+/**
+ * @brief <It is a function to find the maximum number>
+ *
+ * <The function put the first number in the array as a default maximum
+ *  then compare it with each number to find the real maximum number>
+ *
+ * @param <unsigned char *Data> <is A pointer to the array of data>
+ * @param <unsigned int Size> <is the size of the array>
+ *
+ * @return <Retun the maximum number of numbers provided>
+ */
+
+unsigned char find_minimum(unsigned char *Data,unsigned int Size); 
+
+/**
+ * @brief <It is a function to find the minimum number>
+ *
+ * <The function put the first number in the array as a default minimum
+ *  then compare it with each number to find the real minimum number>
+ *
+ * @param <unsigned char *Data> <is A pointer to the array of data>
+ * @param <unsigned int Size> <is the size of the array>
+ *
+ * @return <Retun the minimum number of numbers provided>
+ */
+
+void print_statistics(int Mean,int Median,int Maximum,int Minimum); 
+
+/**
+ * @brief <It is a function to print statistics >
+ *
+ * <it print Mean,Median,Maximum and Minimum>
+ *
+ * @param <Mean>     <The Mean value>
+ * @param <Median>   <The Median number>
+ * @param <Maximum>  <The Maximum number>
+ * @param <Minimum>  <The Minimum number>
+ *
+ * @return <It doesn't return anything>
+ */
 #endif /* __STATS_H__ */

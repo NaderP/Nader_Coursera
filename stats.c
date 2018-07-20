@@ -9,13 +9,22 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c> 
+ * @brief <Week 1 assignment >
  *
- * <Add Extended Description Here>
+ * <It is a simple code for eight functions that will
+ *           -Sort An array
+ *           -Find minimum number
+ *           -Find maximum number
+ *           -Find median  number
+ *           -Find mean    number
+ *           -Print the array
+ *           -Print the statistics "minimum,maximum,median,mean"
+ *           -Main function to control them
+ * >
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Nader Tosson>
+ * @date <20/07/2018 >
  *
  */
 
@@ -26,8 +35,15 @@
 
 /* Size of the Data Set */
 #define SIZE (40)
-
-void main() {
+void print_statistics(int,int,int,int);
+void print_array(unsigned char*,unsigned int);
+unsigned char find_median(unsigned char*,unsigned int);
+unsigned char find_mean(unsigned char*,unsigned int);
+unsigned char find_maximum(unsigned char*,unsigned int);
+unsigned char find_minimum(unsigned char*,unsigned int);
+void sort_array(unsigned char*,unsigned int);
+void main() 
+{
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -35,9 +51,55 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  int Maximum,Minimum,Median,Mean;
+
+  sort_array(test,SIZE);
+
+  Median  = find_median(test,SIZE);
+
+  Maximum = find_maximum(test,SIZE);
+
+  Minimum = find_minimum(test,SIZE);
+
+  Mean    = find_mean(test,SIZE);
+
+/* Statistics and Printing Functions Go Here */
+  print_array(test,SIZE);
+
+  print_statistics(Mean,Median,Maximum,Minimum);
+  
 
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(int Mean,int Median,int Maximum,int Minimum)
+{
+
+}
+
+void print_array(unsigned char*Data,unsigned int Size)
+{
+
+}
+
+unsigned char find_median(unsigned char*Data,unsigned int Size)
+{ 
+
+}
+
+unsigned char find_mean(unsigned char*Data,unsigned int Size)
+{
+
+}
+
+unsigned char find_maximum(unsigned char*Data,unsigned int Size)
+{
+
+}
+
+void sort_array(unsigned char*Data,unsigned int Size)
+{
+
+}
+
+
