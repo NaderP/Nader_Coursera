@@ -28,7 +28,7 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-void print_array(unsigned char *Data,unsigned int Size);
+void print_array( int*,int);
 /**
  * @brief <It is a function to print the array's data>
  *
@@ -40,7 +40,7 @@ void print_array(unsigned char *Data,unsigned int Size);
  * @return <Doesn't return anything>
  */
 
-void sort_array(unsigned char *Data,unsigned int Size);
+void sort_array(int*, int);
 
 /**
  * @brief <It is a function to sort the Array>
@@ -56,7 +56,7 @@ void sort_array(unsigned char *Data,unsigned int Size);
  * @return <Doesn't retun anything>
  */
 
-unsigned char find_median(unsigned char *Data,unsigned int Size); 
+float find_median(int*,int);
 
 /**
  * @brief <A function to find the median Number>
@@ -70,7 +70,7 @@ unsigned char find_median(unsigned char *Data,unsigned int Size);
  * @return <The median of numbers provided>
  */
 
-unsigned char find_mean(unsigned char *Data,unsigned int Size); 
+float find_mean(int*,float); 
 
 /**
  * @brief <A function to find the mean Value>
@@ -83,7 +83,7 @@ unsigned char find_mean(unsigned char *Data,unsigned int Size);
  * @return <Return the mean value of numbers provided>
  */
 
-unsigned char find_maximum(unsigned char *Data,unsigned int Size); 
+int find_minimum(int*, int); 
 
 /**
  * @brief <It is a function to find the maximum number>
@@ -97,7 +97,7 @@ unsigned char find_maximum(unsigned char *Data,unsigned int Size);
  * @return <Retun the maximum number of numbers provided>
  */
 
-unsigned char find_minimum(unsigned char *Data,unsigned int Size); 
+int find_minimum(int*, int); 
 
 /**
  * @brief <It is a function to find the minimum number>
@@ -111,7 +111,7 @@ unsigned char find_minimum(unsigned char *Data,unsigned int Size);
  * @return <Retun the minimum number of numbers provided>
  */
 
-void print_statistics(int Mean,int Median,int Maximum,int Minimum); 
+void print_statistics(int*,int);
 
 /**
  * @brief <It is a function to print statistics >

@@ -35,14 +35,14 @@
 #include <stdlib.h>
 
 /* Size of the Data Set */
-void print_statistics(int*,int);
-void print_array( int*,int);
-float find_median(int*,int);
-float find_mean(int*,float);
-int find_maximum(int*,int);
-int find_minimum(int*, int);
-void sort_array(int*, int);
-int main()
+ void print_statistics(int*,int);
+ void print_array( int*,int);
+ float find_median(int*,int);
+ float find_mean(int*,float);
+ int find_maximum(int*,int);
+ int find_minimum(int*, int);
+ void sort_array(int*, int);
+ int main()
 {
   int SIZE=40;
   int test[40] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -50,7 +50,8 @@ int main()
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
-
+  int*test1;
+      test1=test;
 
 
 /* Statistics and Printing Functions Go Here */
@@ -64,7 +65,6 @@ printf("\n After sorting \n \n");
 print_array(test,SIZE);
 
 print_statistics(test,SIZE);
-
 
 
 }
