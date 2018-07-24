@@ -32,74 +32,130 @@
 
 #include <stdio.h>
 #include "stats.h"
+#include <stdlib.h>
 
 /* Size of the Data Set */
-#define SIZE (40)
-void print_statistics(int,int,int,int);
-void print_array(unsigned char*,unsigned int);
-unsigned char find_median(unsigned char*,unsigned int);
-unsigned char find_mean(unsigned char*,unsigned int);
-unsigned char find_maximum(unsigned char*,unsigned int);
-unsigned char find_minimum(unsigned char*,unsigned int);
-void sort_array(unsigned char*,unsigned int);
-void main() 
+void print_statistics(int*,int);
+void print_array( int*,int);
+float find_median(int*,int);
+float find_mean(int*,float);
+int find_maximum(int*,int);
+int find_minimum(int*, int);
+void sort_array(int*, int);
+int main()
 {
-
-  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
+  int SIZE=40;
+  int test[40] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  int Maximum,Minimum,Median,Mean;
 
-  sort_array(test,SIZE);
-
-  Median  = find_median(test,SIZE);
-
-  Maximum = find_maximum(test,SIZE);
-
-  Minimum = find_minimum(test,SIZE);
-
-  Mean    = find_mean(test,SIZE);
 
 /* Statistics and Printing Functions Go Here */
-  print_array(test,SIZE);
 
-  print_statistics(Mean,Median,Maximum,Minimum);
-  
+print_array(test,SIZE);
+
+sort_array(test,SIZE);
+
+printf("\n After sorting \n \n");
+
+print_array(test,SIZE);
+
+print_statistics(test,SIZE);
+
+
 
 }
 
 /* Add other Implementation File Code Here */
-void print_statistics(int Mean,int Median,int Maximum,int Minimum)
+
+
+void print_array(int*Data, int SIZE)
 {
+ int i;
+ for(i=0;i<SIZE;i++)
+ {
+     printf("Data[%d] \t %d \n",i+1,Data[i]);
 
+ }
+
+return ;
 }
 
-void print_array(unsigned char*Data,unsigned int Size)
+
+void sort_array(int*Data,int SIZE)
 {
+   int i,temp,x;
 
+   for(i=0;i<SIZE;i++)
+   {
+       for(x=i+1;x<SIZE;x++)
+       {
+           if(Data[i]<Data[x]) {temp=Data[i];
+                                 Data[i]=Data[x];
+                                 Data[x]=temp;}
+       }
+   }
+   return ;
 }
 
-unsigned char find_median(unsigned char*Data,unsigned int Size)
-{ 
-
-}
-
-unsigned char find_mean(unsigned char*Data,unsigned int Size)
+int find_maximum(int*Data,int SIZE)
 {
+    int i,max,temp;
+    max = Data[0];
 
+    for(i=0;i<SIZE;i++)
+    {
+        if(Data[i]>max) max=Data[i];
+    }
+    return max;
 }
 
-unsigned char find_maximum(unsigned char*Data,unsigned int Size)
+int find_minimum(int*Data,int SIZE)
 {
+    int i,min,temp;
+    min = Data[0];
 
+    for(i=0;i<SIZE;i++)
+    {
+        if(Data[i]<min) min=Data[i];
+    }
+    return min;
 }
 
-void sort_array(unsigned char*Data,unsigned int Size)
+float find_mean(int*Data,float SIZE)
 {
+    int i,sum;
+    float Avg;
+    sum = 0;
 
+    for(i=0;i<SIZE;i++)
+    {
+        sum = sum + Data[i];
+    }
+    Avg = (sum/SIZE);
+
+  return Avg;
 }
 
+float find_median(int*Data,int SIZE)
+{
+    if(SIZE % 2 == 0) return (Data[(SIZE/2)-1]+Data[(SIZE/2)])/2.0;
+
+    else return Data[(SIZE/2)] ;
+}
+
+void print_statistics(int*Data,int SIZE)
+{
+    int max,min;
+float Avg,median;
+max = find_maximum(Data,SIZE);
+min = find_minimum(Data,SIZE);
+Avg = find_mean(Data,SIZE);
+median = find_median(Data,SIZE);
+printf("Maximum = %d \t Minimum = %d \t Mean = %f \t Median = %f \n",max,min,Avg,median);
+    return;
+}
 
