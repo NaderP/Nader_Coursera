@@ -1,1 +1,1 @@
-/*Author:Nader Tosson and Project Details here */
+/*Author:Nader Tosson */

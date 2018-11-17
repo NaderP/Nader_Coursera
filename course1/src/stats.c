@@ -128,7 +128,7 @@ int find_minimum(int*Data,int SIZE)
 float find_mean(int*Data,float SIZE)
 {
     int i,sum;
-    float Avg;
+    int Avg;
     sum = 0;
 
     for(i=0;i<SIZE;i++)
@@ -142,7 +142,7 @@ float find_mean(int*Data,float SIZE)
 
 float find_median(int*Data,int SIZE)
 {
-    if(SIZE % 2 == 0) return (Data[(SIZE/2)-1]+Data[(SIZE/2)])/2.0;
+    if(SIZE % 2 == 0) return (Data[(SIZE/2)-1]+Data[(SIZE/2)])/2;
 
     else return Data[(SIZE/2)] ;
 }
